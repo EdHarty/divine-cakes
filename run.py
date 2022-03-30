@@ -35,6 +35,7 @@ def validate_figures(values):
     entered ValueError appears.
     """
     try:
+        [int(value) for value in values]
         if len(values) != 7:
             raise ValueError(
                 f"7 values required, you entered {len(values)}"
