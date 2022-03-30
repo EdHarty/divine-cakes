@@ -16,7 +16,9 @@ SHEET = GSPREAD_CLIENT.open('divine_cakes')
 def get_sales_figures():	
     """
     Retrieve sales figures input from the operator in
-    the terminal.
+    the terminal throught the use of a while loop to 
+    collect a valid string of seven figures separated 
+    using commas. The string will end when entries are valid.
     """
     while True:
         print("Please enter sales figures from last trading day")
@@ -50,8 +52,19 @@ def validate_figures(values):
         print(f"Incorrect entry: {e}, Please re-enter data.\n")
         return False
 
-    return True 
-       
+    return True
+    
+     
+def revise_sales_worksheet(figures):
+    """
+    Revise sales worksheet. New row of figures added.
+    """
+    print("revising sales worksheet...\n")
+    sales_worksheet = SHEET.worksheet("sales")
+    sales_worksheet.append_row(figures)
+    print("Sales worksheet revised.\n")
 
-figures = get_sales_figures() 
-        
+
+figures = get_sales_figures()
+sales_figures = [int(num) for num in figures]
+revise_sales_worksheet(sales_figures)
