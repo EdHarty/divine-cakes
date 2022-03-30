@@ -23,7 +23,24 @@ def get_sales_figures():
     print("For Example:10,20,30,40,50,60,70\n")
 
     figures_str = input("Enter Figures here:\n")
-    print(f"The figures provided are {figures_str}")
+    
+    sales_figures = figures_str.split(",")
+    validate_figures(sales_figures)
+    
   
+def validate_figures(values):
+    """
+    Within the try statement, all string values are converted to
+    integers. If str aren't converted to int or 7 values are not 
+    entered ValueError appears.
+    """
+    try:
+        if len(values) != 7:
+            raise ValueError(
+                f"7 values required, you entered {len(values)}"
+            )
+    except ValueError as e:
+        print(f"Incorrect entry: {e}, Please re-enter data.\n")
+
 get_sales_figures() 
         
