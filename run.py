@@ -18,14 +18,20 @@ def get_sales_figures():
     Retrieve sales figures input from the operator in
     the terminal.
     """
-    print("Please enter sales figures from last trading day")
-    print("Enter seven figures separated by commas")
-    print("For Example:10,20,30,40,50,60,70\n")
+    while True:
+        print("Please enter sales figures from last trading day")
+        print("Enter seven figures separated by commas")
+        print("For Example:10,20,30,40,50,60,70\n")
 
-    figures_str = input("Enter Figures here:\n")
-    
-    sales_figures = figures_str.split(",")
-    validate_figures(sales_figures)
+        figures_str = input("Enter Figures here:\n")
+        
+        sales_figures = figures_str.split(",")
+        
+        if validate_figures(sales_figures):
+            print("Figures are valid.")
+            break
+
+    return sales_figures
     
   
 def validate_figures(values):
@@ -42,6 +48,10 @@ def validate_figures(values):
             )
     except ValueError as e:
         print(f"Incorrect entry: {e}, Please re-enter data.\n")
+        return False
 
-get_sales_figures() 
+    return True 
+       
+
+figures = get_sales_figures() 
         
