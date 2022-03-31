@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -21,7 +22,7 @@ def get_sales_figures():
     using commas. The string will end when entries are valid.
     """
     while True:
-        print("Please enter sales figures from last trading day")
+        print("Please enter sales figures from the last trading day")
         print("Enter seven figures separated by commas")
         print("For Example:10,20,30,40,50,60,70\n")
 
@@ -65,6 +66,27 @@ def revise_sales_worksheet(figures):
     print("Sales worksheet revised.\n")
 
 
-figures = get_sales_figures()
-sales_figures = [int(num) for num in figures]
-revise_sales_worksheet(sales_figures)
+def calc_sur_figures(sales_line):
+    """
+    Calculation for surplus. Sales-stock = surplus.
+    A positive number shows excess was made.
+    A negative number shows more cakes had to be made.
+    """
+    print("Calculating surplus figures...\n")
+    stock = SHEET.worksheet("stock").get_all_values() 
+    stock_line = stock[-1] 
+    print(stock_line)
+
+
+def main():
+    """
+    Run functions.
+    """
+    figures = get_sales_figures()
+    sales_figures = [int(num) for num in figures]
+    revise_sales_worksheet(sales_figures)
+    calc_sur_figures(sales_figures)
+
+
+print("Welcome to Divine Cakes")
+main()
