@@ -66,6 +66,16 @@ def revise_sales_worksheet(figures):
     print("Sales worksheet revised.\n")
 
 
+def revise_surplus_worksheet(figures):
+    """
+    Revise surplus worksheet. New row of figures added.
+    """
+    print("revising surplus worksheet...\n")
+    surplus_worksheet = SHEET.worksheet("surplus")
+    surplus_worksheet.append_row(figures)
+    print("Surplus worksheet revised.\n")   
+
+
 def calc_surplus_figures(sales_line):
     """
     Calculation for surplus. Sales-stock = surplus.
@@ -91,8 +101,8 @@ def main():
     figures = get_sales_figures()
     sales_figures = [int(num) for num in figures]
     revise_sales_worksheet(sales_figures)
-    new_surplus_figures = calc_surplus_figures(sales_figures)
-    print(new_surplus_figures)
+    current_surplus_figures = calc_surplus_figures(sales_figures)
+    revise_surplus_worksheet(current_surplus_figures)
 
 
 print("Welcome to Divine Cakes")
