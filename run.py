@@ -104,6 +104,22 @@ def calc_surplus_figures(sales_line):
     return surplus_figures
 
 
+def get_last_7_days_sales():
+    """
+    Gathers last 7 entries of figures from sales
+    worksheet and presents as a list of lists.
+    """
+    sales = SHEET.worksheet("sales")
+    
+    colss = []
+    for prn in range(1, 8):
+        cols = sales.col_values(prn)
+        colss.append(cols[-7:])
+    
+    return colss
+        
+
+
 def main():
     """
     Run functions.
@@ -116,4 +132,6 @@ def main():
 
 
 print("Welcome to Divine Cakes")
-main()
+# main()
+
+sales_colss = get_last_7_days_sales()
