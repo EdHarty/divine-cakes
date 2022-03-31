@@ -21,9 +21,9 @@ def get_sales_figures():
     using commas. The string will end when entries are valid.
     """
     while True:
-        print("Please enter sales figures from the last trading day")
-        print("Enter seven figures separated by commas")
-        print("For Example:10,20,30,40,50,60,70\n")
+        print("Please enter sales figures from the last trading day.")
+        print("Enter seven figures, each figure followed by a comma.")
+        print("For Example:11,12,13,14,15,16,17.\n")
 
         figures_str = input("Enter Figures here:\n")
         
@@ -49,30 +49,10 @@ def validate_figures(values):
                 f"7 values required, you entered {len(values)}"
             )
     except ValueError as e:
-        print(f"Incorrect entry: {e}, Please re-enter figures.\n")
+        print("Incorrect entry, Please re-enter figures.\n")
         return False
 
     return True
-    
-     
-#def revise_sales_worksheet(figures):
- #   """
-  #  Revise sales worksheet. New row of figures added.
-   # """
-   # print("revising sales worksheet...\n")
-    #sales_worksheet = SHEET.worksheet("sales")
-    #sales_worksheet.append_row(figures)
-    #print("Sales worksheet revised.\n")
-
-
-#def revise_surplus_worksheet(figures):
-  #  """
-   # Revise surplus worksheet. New row of figures added.
-   # """
-   # print("revising surplus worksheet...\n")
-    #surplus_worksheet = SHEET.worksheet("surplus")
-    #surplus_worksheet.append_row(figures)
-    #print("Surplus worksheet revised.\n")
 
 
 def revise_worksheet(figures, worksheet):
@@ -82,7 +62,7 @@ def revise_worksheet(figures, worksheet):
     print(f"revising {worksheet} worksheet...\n")
     worksheet_to_revise = SHEET.worksheet(worksheet)
     worksheet_to_revise.append_row(figures)
-    print(f"{worksheet} worksheet revised.\n")
+    print(f"{worksheet} worksheet revised view sheet at @ https://docs.google.com/spreadsheets/d/1dzgowTky9C5rmM2fRvdcFUReOVek7PjSfj04gYTDNio/edit?usp=sharing.\n")
 
 
 def calc_surplus_figures(sales_line):
@@ -149,6 +129,6 @@ def main():
     revise_worksheet(stock_figures, "stock")
 
 
-print("Welcome to Divine Cakes")
+print("Welcome to Divine Cakes, a command line Data Automation programme.")
 main()
 
