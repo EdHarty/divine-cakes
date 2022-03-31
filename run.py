@@ -117,8 +117,24 @@ def get_last_7_days_sales():
         colss.append(cols[-7:])
     
     return colss
-        
 
+
+def calc_stock_figures(figures):
+    """
+    Calculate the average stock needed for each cake,
+    Increasing by 15%.
+    """
+    print("Calculating stock figures...\n")
+    current_stock_figures = []
+
+    for col in figures:
+        int_col = [int(num) for num in col]
+        ave = sum(int_col) / len(int_col)
+        stock_num = ave * 1.15
+        current_stock_figures.append(round(stock_num))
+
+    return current_stock_figures
+        
 
 def main():
     """
@@ -129,9 +145,11 @@ def main():
     revise_worksheet(sales_figures, "sales")
     current_surplus_figures = calc_surplus_figures(sales_figures)
     revise_worksheet(current_surplus_figures, "surplus")
+    sales_colss = get_last_7_days_sales()
+    stock_figures = calc_stock_figures(sales_colss)
+    revise_worksheet(stock_figures, "stock")
 
 
 print("Welcome to Divine Cakes")
-# main()
+main()
 
-sales_colss = get_last_7_days_sales()
