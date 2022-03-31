@@ -50,30 +50,40 @@ def validate_figures(values):
                 f"7 values required, you entered {len(values)}"
             )
     except ValueError as e:
-        print(f"Incorrect entry: {e}, Please re-enter data.\n")
+        print(f"Incorrect entry: {e}, Please re-enter figures.\n")
         return False
 
     return True
     
      
-def revise_sales_worksheet(figures):
-    """
-    Revise sales worksheet. New row of figures added.
-    """
-    print("revising sales worksheet...\n")
-    sales_worksheet = SHEET.worksheet("sales")
-    sales_worksheet.append_row(figures)
-    print("Sales worksheet revised.\n")
+#def revise_sales_worksheet(figures):
+ #   """
+  #  Revise sales worksheet. New row of figures added.
+   # """
+   # print("revising sales worksheet...\n")
+    #sales_worksheet = SHEET.worksheet("sales")
+    #sales_worksheet.append_row(figures)
+    #print("Sales worksheet revised.\n")
 
 
-def revise_surplus_worksheet(figures):
+#def revise_surplus_worksheet(figures):
+  #  """
+   # Revise surplus worksheet. New row of figures added.
+   # """
+   # print("revising surplus worksheet...\n")
+    #surplus_worksheet = SHEET.worksheet("surplus")
+    #surplus_worksheet.append_row(figures)
+    #print("Surplus worksheet revised.\n")
+
+
+def revise_worksheet(figures, worksheet):
     """
-    Revise surplus worksheet. New row of figures added.
-    """
-    print("revising surplus worksheet...\n")
-    surplus_worksheet = SHEET.worksheet("surplus")
-    surplus_worksheet.append_row(figures)
-    print("Surplus worksheet revised.\n")   
+    Latest figures added to appropriate sheet.
+    """  
+    print(f"revising {worksheet} worksheet...\n")
+    worksheet_to_revise = SHEET.worksheet(worksheet)
+    worksheet_to_revise.append_row(figures)
+    print(f"{worksheet} worksheet revised.\n")
 
 
 def calc_surplus_figures(sales_line):
@@ -100,9 +110,9 @@ def main():
     """
     figures = get_sales_figures()
     sales_figures = [int(num) for num in figures]
-    revise_sales_worksheet(sales_figures)
+    revise_worksheet(sales_figures, "sales")
     current_surplus_figures = calc_surplus_figures(sales_figures)
-    revise_surplus_worksheet(current_surplus_figures)
+    revise_worksheet(current_surplus_figures, "surplus")
 
 
 print("Welcome to Divine Cakes")
