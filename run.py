@@ -66,7 +66,7 @@ def revise_sales_worksheet(figures):
     print("Sales worksheet revised.\n")
 
 
-def calc_sur_figures(sales_line):
+def calc_surplus_figures(sales_line):
     """
     Calculation for surplus. Sales-stock = surplus.
     A positive number shows excess was made.
@@ -75,7 +75,13 @@ def calc_sur_figures(sales_line):
     print("Calculating surplus figures...\n")
     stock = SHEET.worksheet("stock").get_all_values() 
     stock_line = stock[-1] 
-    print(stock_line)
+    
+    surplus_figures = []
+    for stock, sales in zip(stock_line, sales_line):
+        surplus = int(stock) - sales
+        surplus_figures.append(surplus)
+    
+    return surplus_figures
 
 
 def main():
@@ -85,7 +91,8 @@ def main():
     figures = get_sales_figures()
     sales_figures = [int(num) for num in figures]
     revise_sales_worksheet(sales_figures)
-    calc_sur_figures(sales_figures)
+    new_surplus_figures = calc_surplus_figures(sales_figures)
+    print(new_surplus_figures)
 
 
 print("Welcome to Divine Cakes")
