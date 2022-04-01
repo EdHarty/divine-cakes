@@ -141,23 +141,23 @@ The initial surplus calculation had a TypeError - cannot use subtraction operand
 
 Deployment:
 
-I had to create a list of requirements. This was done by entering pip3 freeze > requirements.txt in the terminal. The requirements.txt file is updated with a list of dependencies. 
+           I had to create a list of requirements. This was done by entering pip3 freeze > requirements.txt in the terminal. The requirements.txt file is updated.     
 
-I then Git commit and Git pushed.
+           I then Git commit and Git pushed.
 
-I created a Heroku account.
+           I created a Heroku account.
 
-I created a new app and named that app.
+           I created a new app and named that app.
 
-Then in the config vars section I input CREDS in the keys drop-down section and pasted the creds.json file in the value section.
+           Then in the config vars section I input CREDS in the keys drop-down section and pasted the creds.json file in the value section.
 
-I added the buildpacks - Heroku Python and Heroku NodeJs to run the apps.
+           I added the buildpacks - Heroku Python and Heroku NodeJs to run the apps.
 
-I then went to the deploy section - selected Github - connect to Github - I searched for my project in my repository - I clicked connect to link Heroku app to repository code.
+           I then went to the deploy section - selected Github - connect to Github - I searched for my project in my repository - I clicked connect to link Heroku.
 
-I clicked deploy branch. This installs python and various packages to run in the mock terminal.
+           I clicked deploy branch. This installs python and various packages to run in the mock terminal.
 
-Finally a message to confirm that the was successfully deployed.
+           Finally a message to confirm that the was successfully deployed.
 
 <img width="934" alt="deploy" src="https://user-images.githubusercontent.com/88341568/161231416-4f1bb85e-91af-4e73-a1a8-e65c1420fb97.png">
 
