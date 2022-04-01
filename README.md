@@ -1,31 +1,89 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+DIVINE CAKES
 
-Welcome EdHarty,
+Divine cakes is a python command line programme that provides an automated data solution for a fictional bakery.
+Divine cakes is a local Bakery that provides the community with freshly baked goods. The bakery wants to collect data on seven of it's most popular cakes to improve profits. This has to be done in an efficient manner. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+The most popular cakes include:
 
-## Reminders
+-Strawberry Gateau
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+-Red Velvet
 
-## Creating the Heroku app
+-Mocha
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+-Rocky Road
 
-1. `heroku/python`
-2. `heroku/nodejs`
+-Mint Chocolate
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+-Lemon Drizzle
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+-Carrot Cake
 
-Connect your GitHub repository and deploy as normal.
 
-## Constraints
+![image](https://user-images.githubusercontent.com/88341568/161153751-d7cc1608-9af4-48ea-962f-83f1b5470910.png)
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
+Staff arrive early in the morning to bake the stock in advance. If there is a particular cake that has sold out, more of that cake has to be made to meet demand. 
+If stock is left over, they are discarded at the end of the day.
+The aim of the command line programme is to (a) gather the bakery's sales figures, (b) calculate what is left over to give the bakery insight into how many of each cake should be made on a given business day. The primary outcomes are to reduce waste, improve efficiency and improve profitability of the bakery through the use of the python programme. This will also helo to predict sales in the future. In order to achieve this goal the python programme was linked with Google sheets so that the data could be pushed and pulled from the spreadsheet.
+
+<img width="941" alt="screens" src="https://user-images.githubusercontent.com/88341568/161206516-22d352ec-ff85-404c-9cd9-1cd385827f5d.png">
+
+
+TABLE OF CONTENTS
+
+(1) Plan:
+
+     objectives
+
+(2) Features:
+     
+     Welcome message
+     
+     Instructions
+     
+     Data automation
+     
+     Error Message
+     
+     Correct input message
+     
+     Extra Features
+     
+(3) Testing:
+ 
+     Python
+      
+     Manual testing
+      
+     Bugs
+      
+(4) Deployment:
+     
+     Heroku
+     
+(5) Credits
+
+
+Plan:
+
+
+<img width="505" alt="plan" src="https://user-images.githubusercontent.com/88341568/161161458-9836166e-8c09-4022-939b-c16249565af5.png">
+
+Objectives:
+
+I wanted to create a command line python programme that was easy to understand and navigate. I wanted the user to be able to input data into the terminal and for this data to also be represented on a google sheet. I set up an Aplication User Interface (API) to make it possible for the applications to share data.
+
+<img width="948" alt="api" src="https://user-images.githubusercontent.com/88341568/161210139-149e1d04-5646-482e-99ec-d6efbd96a9ce.png">
+
+
+
+
+      
+
+
+  
+
+
+
+
